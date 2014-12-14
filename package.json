@@ -1,8 +1,8 @@
 {
-  "name": "co-exec",
-  "version": "1.1.0",
-  "description": "exec() wrapper for 'co'",
-  "repository": "visionmedia/co-exec",
+  "name": "exec-co",
+  "version": "1.2.0",
+  "description": "exec() wrapper for 'co' that returns output and error",
+  "repository": "elzair/exec-co",
   "keywords": [
     "async",
     "flow",
