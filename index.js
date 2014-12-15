@@ -12,15 +12,17 @@ var exec = require('child_process').exec;
 var thunkifyExec = function(cmd, opts){
   return function(done){
     exec(cmd, opts, function(err, stdout, stderr){
-      done(err, stdout);
+      done(err, [stdout, stderr]);
     });
   }
 };
 
 module.exports = function* (cmd, opts) {
-  var ret = {out: null, err: null};
+  var ret = {err: null, stdout: null, stderr: null};
   try {
-    ret.out = yield thunkifyExec(cmd, opts);
+    var res = yield thunkifyExec(cmd, opts);
+    ret.stdout = res[0];
+    ret.stderr = res[1];
   }
   catch (err) {
     ret.err = err;

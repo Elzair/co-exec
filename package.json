@@ -1,6 +1,6 @@
 {
   "name": "exec-co",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "exec() wrapper for 'co' that returns output and error",
   "repository": "elzair/exec-co",
   "keywords": [
